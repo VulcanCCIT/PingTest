@@ -11,6 +11,7 @@
 		634B1C652A05BFE100CA1909 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B1C642A05BFE100CA1909 /* ContentView.swift */; };
 		634B1C672A05BFE200CA1909 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 634B1C662A05BFE200CA1909 /* Assets.xcassets */; };
 		634B1C6A2A05BFE200CA1909 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 634B1C692A05BFE200CA1909 /* Preview Assets.xcassets */; };
+		634B1C722A05C48100CA1909 /* SwiftyPing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B1C712A05C48100CA1909 /* SwiftyPing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		634B1C642A05BFE100CA1909 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		634B1C662A05BFE200CA1909 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		634B1C692A05BFE200CA1909 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		634B1C712A05C48100CA1909 /* SwiftyPing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyPing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		634B1C612A05BFE100CA1909 /* PingTest */ = {
 			isa = PBXGroup;
 			children = (
+				634B1C702A05C22B00CA1909 /* Sources */,
 				634B1C622A05BFE100CA1909 /* PingTestApp.swift */,
 				634B1C642A05BFE100CA1909 /* ContentView.swift */,
 				634B1C662A05BFE200CA1909 /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				634B1C692A05BFE200CA1909 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		634B1C702A05C22B00CA1909 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				634B1C712A05C48100CA1909 /* SwiftyPing.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				634B1C722A05C48100CA1909 /* SwiftyPing.swift in Sources */,
 				634B1C652A05BFE100CA1909 /* ContentView.swift in Sources */,
 				634B1C632A05BFE100CA1909 /* PingTestApp.swift in Sources */,
 			);
