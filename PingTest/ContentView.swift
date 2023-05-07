@@ -16,6 +16,7 @@ struct ContentView: View {
   @State var response = ""
   
   var body: some View {
+    
     VStack {
       HStack {
         Button(action: {
@@ -46,18 +47,19 @@ struct ContentView: View {
         })
         
       }
-      //scroll indicators are not showing for some reason
-      ScrollView(.vertical) {
-        LazyVStack(spacing: 10) {
+      LazyVStack(spacing: 300) {
+        ScrollView(.vertical, showsIndicators: true) {
           TextEditor(text: .constant(response))
-            .frame(minHeight: 600)
             .scrollContentBackground(.hidden)
+            .background(Color.black)
+            .foregroundColor(Color.green)
+            .font(.title3)
+            .frame(width: 375, height: 550)
+            .cornerRadius(25)
         }
-        .background(Color(.black))
-        .foregroundColor(.green)
-        .font(.title3)
-        .fontWeight(.bold)
+        
       }
+      .frame(width: 300, height: 550)
     }
     .padding()
   }
@@ -77,7 +79,10 @@ struct ContentView: View {
       ping = try SwiftyPing(host: "1.1.1.1", configuration: PingConfiguration(interval: 1.0, with: 1), queue: DispatchQueue.global())
       ping?.observer = { (response) in
         DispatchQueue.main.async {
-          var message = "\(response.duration * 1000) ms"
+          
+          let value = Int(round(response.duration * 1000000) / 1000)
+          
+          var message = "\(value) ms"
           if let error = response.error {
             if error == .responseTimeout {
               message = "Timeout \(message)"
@@ -86,7 +91,7 @@ struct ContentView: View {
               message = error.localizedDescription
             }
           }
-          self.response.append(contentsOf: "\nPing #\(response.sequenceNumber): \(message)")
+          self.response.append(contentsOf: "\nReply from \(response.ipAddress!): bytes=\(response.byteCount!) time= \(message)")
           //self.textView.string.append(contentsOf: "\nPing #\(response.sequenceNumber): \(message)")
           //self.textView.scrollRangeToVisible(NSRange(location: self.textView.string.count - 1, length: 1))
         }
